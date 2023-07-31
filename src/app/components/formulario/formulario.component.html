@@ -1,0 +1,56 @@
+<div class="logout-btn">
+    <button (click)="onClick()" class="btn btn-danger">Cerrar sesión</button>
+  </div>
+<head>
+    <title>Agregar un Héroe</title>
+  </head>
+  <div class="container">
+      <h1 class="animated fadeIn fast">Agregue un Héroe</h1>
+      <hr>
+      <form >
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Ingrese Codigo de Registro</label>
+          <input type="text" class="form-control" id="Codigoderegistro" [(ngModel)]="Codigoderegistro" name="nombreHeroe" >
+        </div>
+        <div class="rutaHeroe">
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Año</label>
+            <br>
+            <input type="date" id="Fecha" [(ngModel)]="Fecha" name="Fecha">
+          </div>
+        </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Ingrese Nombre del Cliente</label>
+            <input type="text" class="form-control" id="Cliente" [(ngModel)]="Cliente" name="Cliente" >
+        </div>
+        <div class="combobox">
+            <label for="Tipodeinteraccion" class="form-label">Seleccione la Tipo de interaccion</label>
+            <select [(ngModel)]="Tipodeinteraccion" name="Tipodeinteraccion">
+              <option value="" disabled selected>Seleccionar</option> 
+              <option value="teléfono fijo">teléfono fijo</option>
+              <option value="celular">celular</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+            </select>
+        </div>
+        <div class="mb-3">
+          <label for="Descripcion" class="form-label">Biografía</label>
+          <textarea class="form-control" id="Descripcion" [(ngModel)]="Descripcion" name="Descripcion" ></textarea>
+        </div>
+        
+        <div class="rutaHeroe">
+          <div class="mb-3">
+            <label for="img" class="form-label">Ingrese imagen del héroe</label>
+            <input type="file" id="img" name="img" (change)="onFileSelected($event)">
+          </div>
+        </div>
+        <div *ngIf="mostrarAviso" class="aviso">La información se esta guardando.</div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="button" (click)="insertCallcenter(Codigoderegistro, Fecha, Cliente,Tipodeinteraccion,Descripcion,img)" [disabled]="mostrarAviso">
+            <span *ngIf="!mostrarAviso">Guardar</span>
+            <span *ngIf="mostrarAviso">Guardando...</span>
+          </button>
+        </div>
+      </form>
+  </div>

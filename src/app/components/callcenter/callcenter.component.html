@@ -1,0 +1,33 @@
+<h1>{{callcenter.nombre}} <small>{{callcenter.aparicion}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <img src="" alt="">
+        <br><br>
+        <a href="callcenter" class="btn btn-outline-danger btn-black">Regresar
+
+        </a>
+    </div>
+    <div class="col-md-8">
+        
+        <h3>El codigo es: {{callcenter.Codigoderegistro}}</h3>
+        <hr>
+        <h3>Fecha: {{callcenter.Fecha}}</h3>
+        <hr>
+        <p>
+            Nombre del cliente:  {{callcenter.Cliente}}
+        </p>
+        <p>
+            Tipo: {{callcenter.Tipodeinteraccion}}
+        </p>
+        <p>
+            {{callcenter.Descripcion}}
+        </p>
+        
+        <div>
+            <img [src]="callcenter.img" class="img-fluid rounded-start" alt="...">
+            <br><br><br><br>            
+        </div>
+    </div>
+
+</div>

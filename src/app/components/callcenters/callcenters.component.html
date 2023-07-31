@@ -1,0 +1,24 @@
+<h1>Transportes - <small>Destinos</small></h1>
+<hr>
+
+
+<div class="col animated fadeIn fast" *ngFor="let callcenter of callcenters">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="callcenter.img" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{callcenter.Codigoderegistro}}</h5>
+                    <p class="card-text">{{callcenter.Fecha}}</p>
+                    <p class="card-text"><small class="text-body-secondary">{{callcenter.Cliente}}</small></p>
+                    <p class="card-text"><small class="text-body-secondary">{{callcenter.Tipodeinteraccion}}</small></p>
+                    <p class="card-text"><small class="text-body-secondary">{{callcenter.Descripcion}}</small></p>
+                    <button (click)="vercallcenter(callcenter)" type="button" class="text-body-secondary">Ver Mas</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
